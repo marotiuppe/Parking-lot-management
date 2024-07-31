@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parking Lot Management</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <h1>Parking Lot Management</h1>
-  <div class="main-section">
-    <div class="form-section">
-      <div id="message"></div>
-      <form id="parking-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="mobile-number">Mobile Number :</label>
-        <input type="text" id="mobile-number" name="mobile-number" required>
-        <label for="vehicle-number">Vehicle Number:</label>
-        <input type="text" id="vehicle-number" name="vehicle-number" required>
-        <label for="parking-slot">Parking Slot:</label>
-        <input type="number" id="parking-slot" name="parking-slot" required>
-        <button type="submit">Book Slot</button>
-      </form>
-    </div>
-    <div class="slot-section">
-      <h2>Available Slots</h2>
-      <ul id="slots-list"></ul>
+<div>
+  <div class="container">
+    <h1>Parking Lot Management</h1>
+    <div class="main-section">
+      <div class="form-section">
+        <form id="parking-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile-number">Mobile Number:</label>
+            <input type="text" id="mobile-number" name="mobile-number" required>
+          </div>
+          <div class="form-group">
+            <label for="vehicle-number">Vehicle Number:</label>
+            <input type="text" id="vehicle-number" name="vehicle-number" required>
+          </div>
+          <div class="form-group">
+            <label for="parking-slot">Parking Slot:</label>
+            <input type="number" id="parking-slot" name="parking-slot" required>
+          </div>
+          <button type="submit">Book Slot</button>
+        </form>
+      </div>
+      <div class="slot-section">
+        <div id="message"></div>
+        <h2>Available Slots</h2>
+        <div id="parking-lot">
+          <!-- <div class="slot available" data-slot="1"></div> -->
+        </div>
+        <!-- <ul id="slots-list"></ul> -->
+      </div>
     </div>
   </div>
   <script src="js/scripts.js"></script>
-</body>
+  </body>
+
 </html>

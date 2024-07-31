@@ -1,12 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f2f5;
-  margin: 5px;
-  padding: 5px;
-  /* display: grid; */
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
 .container {
@@ -15,20 +11,27 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 100%;
-  max-width: 600px;
-  box-sizing: border-box;
+  max-width: 97%;
+  margin: auto;
 }
+
 .main-section {
-  width: 100vw;
-  display: flex;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  margin-top: 20px;
 }
-.form-section {
-  width: 32vw;
-  padding-left: 30px;
-}
+
+.form-section,
 .slot-section {
-  width: 58vw;
-  padding-left: 30px;
+  /* flex: 1; */
+  padding: 20px;
+  margin: 10px;
+}
+
+.form-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
 }
 
 h1 {
@@ -36,14 +39,26 @@ h1 {
   color: #333;
 }
 
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
 .form-group {
-  margin-bottom: 15px;
+  margin: 6px;
+  width: 100%;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
   color: #555;
+}
+form#parking-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin-top: 20px; */
 }
 
 input {
@@ -55,23 +70,22 @@ input {
 }
 
 button {
-  width: 100%;
-  padding: 10px;
+  width: 48%;
+  height: 10%;
+  padding: 7px;
+  margin-top: 29px;
+  margin-left: 6px;
   border: none;
   border-radius: 4px;
   background-color: #28a745;
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #218838;
-}
-
-h2 {
-  margin-top: 20px;
-  color: #333;
 }
 
 ul {
@@ -97,12 +111,82 @@ li:nth-child(odd) {
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
-  .container {
-      padding: 10px;
+@media (max-width: 800px) {
+  .main-section {
+    flex-direction: column;
   }
 
-  button {
-      font-size: 14px;
+  .form-section,
+  .slot-section {
+    width: 100%;
   }
+}
+
+/*  */
+#parking-lot {  
+  display: grid;  
+  grid-template-columns: repeat(10, 1fr); /* Adjust the number of columns */  
+  gap: 10px; /* Space between slots */  
+  margin: 20px;  
+}  
+
+.slot {  
+  width: 50px;  
+  height: 50px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  border: 2px solid #ccc;  
+  font-weight: bold;  
+  cursor: pointer;  
+}  
+
+.available {  
+  background-color: #e0f7fa; /* Light blue for available */  
+}  
+
+.selected {  
+  background-color: #ffeb3b; /* Yellow for selected */  
+  border-color: #fbc02d; /* Darker yellow border */  
+}  
+
+.sold {  
+  background-color: #e0e0e0; /* Grey for sold */  
+  border-color: #bdbdbd; /* Darker grey border */  
+}  
+
+.bestseller {  
+  background-color: #ffe0b2; /* Light orange for bestseller */  
+  border-color: #ff9800; /* Darker orange border */  
+}
+div#message {
+  text-align: center;
+  color: green;
+}
+
+.tooltip {
+  position: relative;
+  /* display: inline-block; */
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
