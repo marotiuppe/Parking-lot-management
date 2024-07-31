@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Lot Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Parking Lot Management</h1>
+  <div class="main-section">
+    <div class="form-section">
+      <div id="message"></div>
+      <form id="parking-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="mobile-number">Mobile Number :</label>
+        <input type="text" id="mobile-number" name="mobile-number" required>
+        <label for="vehicle-number">Vehicle Number:</label>
+        <input type="text" id="vehicle-number" name="vehicle-number" required>
+        <label for="parking-slot">Parking Slot:</label>
+        <input type="number" id="parking-slot" name="parking-slot" required>
+        <button type="submit">Book Slot</button>
+      </form>
+    </div>
+    <div class="slot-section">
+      <h2>Available Slots</h2>
+      <ul id="slots-list"></ul>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
