@@ -130,16 +130,20 @@ li:nth-child(odd) {
   margin: 20px;  
 }  
 
-.slot {  
-  width: 50px;  
-  height: 50px;  
+.slot { 
   display: flex;  
   align-items: center;  
   justify-content: center;  
   border: 2px solid #ccc;  
   font-weight: bold;  
   cursor: pointer;  
-}  
+  width: 40px; /* Width of each slot */  
+  height: 40px; /* Height of each slot */  
+  border-radius: 50%; /* Make them circular */  
+  text-align: center;   
+  line-height: 40px; /* Center text vertically */  
+  cursor: pointer; /* Pointer on hover */  
+} 
 
 .available {  
   background-color: #e0f7fa; /* Light blue for available */  
@@ -149,7 +153,12 @@ li:nth-child(odd) {
   background-color: #ffeb3b; /* Yellow for selected */  
   border-color: #fbc02d; /* Darker yellow border */  
 }  
-
+.booked {  
+  background-color: #ffcdd2; /* Light red for booked */  
+  border-color: #f44336; /* Darker red border */  
+  color: #ffffff; /* White text for better contrast */ 
+  cursor: not-allowed; /* Change cursor to indicate that it's not selectable */  
+}  
 .sold {  
   background-color: #e0e0e0; /* Grey for sold */  
   border-color: #bdbdbd; /* Darker grey border */  
@@ -159,9 +168,13 @@ li:nth-child(odd) {
   background-color: #ffe0b2; /* Light orange for bestseller */  
   border-color: #ff9800; /* Darker orange border */  
 }
-div#message {
+div#success-message {
   text-align: center;
   color: green;
+}
+div#error-message {
+  text-align: center;
+  color: red;
 }
 
 .tooltip {
@@ -189,4 +202,4 @@ div#message {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-}
+} 

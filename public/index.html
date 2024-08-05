@@ -12,28 +12,29 @@
     <h1>Parking Lot Management</h1>
     <div class="main-section">
       <div class="form-section">
-        <form id="parking-form">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="mobile-number">Mobile Number:</label>
-            <input type="text" id="mobile-number" name="mobile-number" required>
-          </div>
-          <div class="form-group">
-            <label for="vehicle-number">Vehicle Number:</label>
-            <input type="text" id="vehicle-number" name="vehicle-number" required>
-          </div>
-          <div class="form-group">
-            <label for="parking-slot">Parking Slot:</label>
-            <input type="number" id="parking-slot" name="parking-slot" required>
-          </div>
-          <button type="submit">Book Slot</button>
-        </form>
+        <form id="parking-form" onsubmit="return validateForm()">  
+          <div class="form-group">  
+              <label for="name">Name:</label>  
+              <input type="text" id="name" name="name" required>  
+          </div>  
+          <div class="form-group">  
+              <label for="mobile-number">Mobile Number:</label>  
+              <input type="text" id="mobile-number" name="mobile-number" pattern="\d{10}" required placeholder="10 digits" maxlength="10"> 
+          </div>  
+          <div class="form-group">  
+              <label for="vehicle-number">Vehicle Number:</label>  
+              <input type="text" id="vehicle-number" name="vehicle-number" required oninput="this.value = this.value.toUpperCase()" pattern="[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}" placeholder="e.g., KL 54 KI 9955">   <small id="vehicle-error" style="color: red; display: none;">Please enter a valid vehicle number format: KL 54 KI 9955.</small>  
+          </div>  
+          <div class="form-group">  
+              <label for="parking-slot">Parking Slot:</label>  
+              <input type="number" id="parking-slot" name="parking-slot" required>  
+          </div>  
+          <button type="submit">Book Slot</button>  
+      </form>
       </div>
       <div class="slot-section">
-        <div id="message"></div>
+        <div id="success-message"></div>
+        <div id="error-message"></div>  
         <h2>Available Slots</h2>
         <div id="parking-lot">
           <!-- <div class="slot available" data-slot="1"></div> -->
@@ -42,7 +43,7 @@
       </div>
     </div>
   </div>
+  <script src="js/constants.js"></script>
   <script src="js/scripts.js"></script>
   </body>
-
 </html>

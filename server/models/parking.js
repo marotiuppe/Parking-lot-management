@@ -1,10 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database(':memory:');
-
 // Initialize the database
 db.serialize(() => {
   db.run("CREATE TABLE parking_slots (id INTEGER PRIMARY KEY, status TEXT)");
-  for (let i = 1; i <= 50; i++) {
+  for (let i = 1; i <= 100; i++) {
     db.run("INSERT INTO parking_slots (status) VALUES ('available')");
   }
 });

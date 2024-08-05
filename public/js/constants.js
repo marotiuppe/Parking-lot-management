@@ -1,0 +1,1 @@
+const maxSlotValue=100;
